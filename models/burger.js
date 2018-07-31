@@ -16,6 +16,6 @@ var burger = {
         orm.updateOne(burger_id, function(res){
           callback(res);
         });
-      }
-    };
+      }};
+      
 module.exports = burger;

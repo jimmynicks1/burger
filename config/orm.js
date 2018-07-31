@@ -1,11 +1,8 @@
 var connection = require('../config/connection.js')
 
-var orm = 
-{
-	selectAll: function(callback) 
-	{
-		connection.query('SELECT * FROM burgers', function(err, result)
-		{
+var orm = {
+	selectAll: function(callback) {
+		connection.query('SELECT * FROM burgers', function(err, result){
 			if (err) throw err;
 			callback(result);
 		});
@@ -16,12 +13,10 @@ var orm =
 			{	burger_name: burger_name,
                 devoured: false,
                 date: timestamp              
-			}, function(err, result)
-			{
+			}, function(err, result){	
 				if (err) throw err;
 				callback(result);
-			});
-				
+			});			
     },
     
     updateOne: function(burgerID, callback){
@@ -30,7 +25,6 @@ var orm =
                 if (err) throw err;
                 callback(result);
             });
-}
-};
+}};
 
 module.exports = orm;
